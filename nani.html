@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advance Happy Birthday</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffd6e8, #ffe6f0);
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      color: #d10068;
+      margin-top: 20px;
+    }
+
+    .emoji-heart {
+      white-space: pre;
+      font-size: 24px;
+      line-height: 1.2;
+      margin-top: 20px;
+    }
+
+    .bg-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 4em;
+      color: rgba(255, 192, 203, 0.08);
+      font-weight: bold;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bottom-text {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #99004d;
+      padding: 30px 20px 10px;
+      z-index: 2;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 30px;
+    }
+
+    .images img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .falling {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      color: rgba(255, 105, 180, 0.6);
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    audio {
+      width: 90%;
+      margin: 20px auto 40px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-text">Love You 💖 Happy Birthday 💋 Ummah 💗</div>
+
+  <h1>Advance Happy Birthday Nani</h1>
+
+  <div class="images">
+    <img src="chilkur.jpg" alt="Photo 1" />
+    <img src="fest.jpg" alt="Photo 2" />
+  </div>
+
+  <div class="emoji-heart" id="heart"></div>
+
+  <div class="bottom-text">
+    Nenu manchiga unta nani manam manchiga undham.<br>
+    Please nuvvu nenu mi nanna pillalu anthe.<br>
+    Please nannu pelli chesuko. Nenu manchiga unta,<br>
+    manchiga chuskunta, manchiga undham 💖
+  </div>
+
+  <!-- Visible audio control at the bottom -->
+  <audio controls>
+    <source src="your-audio-file.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- JavaScript for heart shape -->
+  <script>
+    const heartLines = [
+      "         ❤️❤️❤️         ❤️❤️❤️      ",
+      "       ❤️❤️❤️❤️❤️     ❤️❤️❤️❤️❤️   ",
+      "     ❤️❤️❤️❤️❤️❤️❤️ ❤️❤️❤️❤️❤️❤️❤️ ",
+      "     ❤️❤️❤️❤️❤️❤️❤️ ❤️❤️❤️❤️❤️❤️❤️ ",
+      "     ❤️❤️❤️❤️❤️❤️❤️ ❤️❤️❤️❤️❤️❤️❤️ ",
+      "       ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️  ",
+      "         ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️    ",
+      "           ❤️❤️❤️❤️❤️❤️❤️❤️❤️      ",
+      "             ❤️❤️❤️❤️❤️❤️❤️        ",
+      "               ❤️❤️❤️❤️❤️          ",
+      "                 ❤️❤️❤️            "
+    ];
+    document.getElementById("heart").innerText = heartLines.join("\n");
+
+    // falling effect
+    const emojis = ["💖", "💋", "❤️", "💕"];
+    for (let i = 0; i < 40; i++) {
+      const span = document.createElement("span");
+      span.className = "falling";
+      span.style.left = `${Math.random() * 100}vw`;
+      span.style.animationDuration = `${5 + Math.random() * 5}s`;
+      span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      document.body.appendChild(span);
+    }
+  </script>
+</body>
+</html>
